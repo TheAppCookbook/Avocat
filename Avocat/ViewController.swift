@@ -18,6 +18,8 @@ class ViewController: UIViewController {
         RedditClient().questions { (qs: [Question]?) in
             RedditClient().comments(qs!.first!, completion: { (comments: (best: Comment, controversial: Comment)?) in
                 self.commentLabel.attributedText = comments!.controversial.attributedText
+                println(comments!.best.authorUsername)
+                println(comments!.controversial.authorUsername)
             })
         }
     }

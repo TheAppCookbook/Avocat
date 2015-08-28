@@ -78,47 +78,40 @@ struct RedditClient {
                 controversialComment = controversial
             }
             
-            if bestComment != nil && controversial != nil {
+            if bestComment != nil && controversialComment != nil {
                 completion((best: bestComment!, controversial: controversialComment!))
             }
         }
         
-        // BEST Request
+        // BEST Request...
         let bestParams: NSMutableDictionary = ["sort": "best"]
-        self.client.GET(question.urlPath, parameters: bestParams, success: { (op: AFHTTPRequestOperation, resp: AnyObject) in
-            if let responseDoc = resp as? ONOXMLDocument {
-                var commentText = NSMutableAttributedString()
-                
-                let userText = responseDoc.firstChildWithCSS("div.commentarea").firstChildWithCSS("div.usertext-body")
-                let elements: NSEnumerator = userText.CSS("p") as! NSEnumerator
-                for element in elements {
-                    if let paragraphElement = element as? ONOXMLElement {
-                        let paragraphData = paragraphElement.description.dataUsingEncoding(NSUTF8StringEncoding,
-                            allowLossyConversion: true)!
-                        
-                        let paragraphText = NSAttributedString(data: paragraphData,
-                            options: [
-                                NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
-                                NSCharacterEncodingDocumentAttribute: NSUTF8StringEncoding
-                            ], documentAttributes: nil, error: nil)!
-                        
-                        commentText.appendAttributedString(paragraphText)
-                    }
-                }
-                
-                let bestComment = Comment(attributedText: commentText)
-                zipRequests(bestComment, nil)
-            }
-        }, failure: nil)
+        let bestHandler: (Comment) -> Void = { (comment: Comment) in
+            zipRequests(comment, nil)
+        }
         
-        // CONTROVERSIAL Request
+        self.comment(question, params: bestParams, handler: bestHandler)
+        
+        // CONTROVERSIAL Request...
         let controversialParams: NSMutableDictionary = ["sort": "controversial"]
-        self.client.GET(question.urlPath, parameters: controversialParams, success: { (op: AFHTTPRequestOperation, resp: AnyObject) in
+        let controversialHandler: (Comment) -> Void = { (comment: Comment) in
+            zipRequests(nil, comment)
+        }
+        
+        self.comment(question, params: controversialParams, handler: controversialHandler)
+    }
+    
+    private func comment(question: Question, params: NSDictionary, handler: (Comment) -> Void) {
+        self.client.GET(question.urlPath, parameters: params, success: { (op: AFHTTPRequestOperation, resp: AnyObject) in
             if let responseDoc = resp as? ONOXMLDocument {
                 var commentText = NSMutableAttributedString()
                 
-                let userText = responseDoc.firstChildWithCSS("div.commentarea").firstChildWithCSS("div.usertext-body")
-                let elements: NSEnumerator = userText.CSS("p") as! NSEnumerator
+                let commentArea = responseDoc.firstChildWithCSS("div.commentarea")
+                let username = commentArea.firstChildWithCSS("a.author").stringValue()
+                
+                let userTextElement = commentArea.firstChildWithCSS("div.usertext-body")
+                let commentId = userTextElement.previousSibling.attributes["value"] as! String
+                
+                let elements: NSEnumerator = userTextElement.CSS("p") as! NSEnumerator
                 for element in elements {
                     if let paragraphElement = element as? ONOXMLElement {
                         let paragraphData = paragraphElement.description.dataUsingEncoding(NSUTF8StringEncoding,
@@ -134,8 +127,13 @@ struct RedditClient {
                     }
                 }
                 
-                let controversialComment = Comment(attributedText: commentText)
-                zipRequests(nil, controversialComment)
+                let comment = Comment(
+                    attributedText: commentText,
+                    commentId: commentId,
+                    authorUsername: username
+                )
+                
+                handler(comment)
             }
         }, failure: nil)
     }

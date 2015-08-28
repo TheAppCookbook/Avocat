@@ -11,4 +11,6 @@ import Foundation
 struct Comment {
     // MARK: Properties
     let attributedText: NSAttributedString
+    let commentId: String
+    let authorUsername: String
 }
