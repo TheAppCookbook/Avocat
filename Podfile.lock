@@ -1,0 +1,59 @@
+PODS:
+  - ACBInfoPanel (0.0.1)
+  - AFNetworking (2.6.0):
+    - AFNetworking/NSURLConnection (= 2.6.0)
+    - AFNetworking/NSURLSession (= 2.6.0)
+    - AFNetworking/Reachability (= 2.6.0)
+    - AFNetworking/Security (= 2.6.0)
+    - AFNetworking/Serialization (= 2.6.0)
+    - AFNetworking/UIKit (= 2.6.0)
+  - AFNetworking/NSURLConnection (2.6.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.6.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.6.0)
+  - AFNetworking/Security (2.6.0)
+  - AFNetworking/Serialization (2.6.0)
+  - AFNetworking/UIKit (2.6.0):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - AFOnoResponseSerializer (1.0.0):
+    - AFNetworking (~> 2.2)
+    - Ono (~> 1.0)
+  - Ono (1.2.2)
+  - Parsimmon (0.4.0)
+
+DEPENDENCIES:
+  - ACBInfoPanel (from `git@github.com:TheAppCookbook/templates.git`, branch `master`)
+  - AFNetworking
+  - AFOnoResponseSerializer
+  - Parsimmon (from `git@github.com:TheAppCookbook/Parsimmon.git`, branch `master`)
+
+EXTERNAL SOURCES:
+  ACBInfoPanel:
+    :branch: master
+    :git: git@github.com:TheAppCookbook/templates.git
+  Parsimmon:
+    :branch: master
+    :git: git@github.com:TheAppCookbook/Parsimmon.git
+
+CHECKOUT OPTIONS:
+  ACBInfoPanel:
+    :commit: c418d6be0b4ffda3c851e47191e2d6402f66fb0e
+    :git: git@github.com:TheAppCookbook/templates.git
+  Parsimmon:
+    :commit: 574125964d0cb249d45409e50467329f7dfe7746
+    :git: git@github.com:TheAppCookbook/Parsimmon.git
+
+SPEC CHECKSUMS:
+  ACBInfoPanel: 186db7784366d9a331d406e02a9da58b61e1b55e
+  AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
+  AFOnoResponseSerializer: c02c8bef1d6742ac68f33ecaed41826c9657bc33
+  Ono: 80b1c686777d3f6d5d5ce6fcac8a74afef4ca197
+  Parsimmon: 9fe1f416f5d0c63c28ba14bd4f1bbbfec458a7d3
+
+COCOAPODS: 0.38.2
