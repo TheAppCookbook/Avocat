@@ -49,8 +49,11 @@ struct RedditClient {
                             }
                         }
                         
+                        let titleText = questionElement.stringValue()
                         let url = RedditClient.baseURL.URLByAppendingPathComponent(questionElement.attributes["href"] as! String)
+                        
                         questions.append(Question(url: url,
+                            titleText: titleText,
                             explained: explained,
                             locked: locked))
                     }
@@ -117,11 +120,15 @@ struct RedditClient {
                         let paragraphData = paragraphElement.description.dataUsingEncoding(NSUTF8StringEncoding,
                             allowLossyConversion: true)!
                         
-                        let paragraphText = NSAttributedString(data: paragraphData,
+                        var paragraphText: NSMutableAttributedString = NSMutableAttributedString(data: paragraphData,
                             options: [
                                 NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
-                                NSCharacterEncodingDocumentAttribute: NSUTF8StringEncoding
+                                NSCharacterEncodingDocumentAttribute: NSUTF8StringEncoding,
                             ], documentAttributes: nil, error: nil)!
+                        
+                        paragraphText.setAttributes([
+                            NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleNone.rawValue
+                        ], range: NSMakeRange(0, paragraphText.length))
                         
                         commentText.appendAttributedString(paragraphText)
                     }

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		3EDF924C9CF90B5298130C66 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82B6A472A0B09BEDF3CE3A46 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		738331FB1B90BC6E0025F6D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738331FA1B90BC6E0025F6D1 /* AppDelegate.swift */; };
-		738331FD1B90BC6E0025F6D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738331FC1B90BC6E0025F6D1 /* ViewController.swift */; };
+		738331FD1B90BC6E0025F6D1 /* QuestionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738331FC1B90BC6E0025F6D1 /* QuestionListViewController.swift */; };
 		738332001B90BC6E0025F6D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 738331FE1B90BC6E0025F6D1 /* Main.storyboard */; };
 		738332021B90BC6E0025F6D1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 738332011B90BC6E0025F6D1 /* Images.xcassets */; };
 		738332051B90BC6E0025F6D1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 738332031B90BC6E0025F6D1 /* LaunchScreen.xib */; };
@@ -19,6 +19,13 @@
 		73E596B01B90C5DE00B9292F /* EnumerationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E596AF1B90C5DE00B9292F /* EnumerationExtensions.swift */; };
 		73E596B21B90CB2500B9292F /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E596B11B90CB2500B9292F /* Question.swift */; };
 		73E596B41B90CB3400B9292F /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E596B31B90CB3400B9292F /* Comment.swift */; };
+		73E596B61B90DEE800B9292F /* CardPopSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E596B51B90DEE800B9292F /* CardPopSegue.swift */; };
+		73E596B91B90E30D00B9292F /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E596B81B90E30D00B9292F /* QuestionViewController.swift */; };
+		73E596BE1B90F33D00B9292F /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73E596BA1B90F33D00B9292F /* OpenSans-Italic.ttf */; };
+		73E596BF1B90F33D00B9292F /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73E596BB1B90F33D00B9292F /* OpenSans-Semibold.ttf */; };
+		73E596C01B90F33D00B9292F /* Vollkorn-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73E596BC1B90F33D00B9292F /* Vollkorn-Italic.ttf */; };
+		73E596C11B90F33D00B9292F /* Vollkorn-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73E596BD1B90F33D00B9292F /* Vollkorn-Regular.ttf */; };
+		73E596C31B90F50200B9292F /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73E596C21B90F50000B9292F /* OpenSans-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +43,7 @@
 		738331F51B90BC6E0025F6D1 /* Avocat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Avocat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		738331F91B90BC6E0025F6D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		738331FA1B90BC6E0025F6D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		738331FC1B90BC6E0025F6D1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		738331FC1B90BC6E0025F6D1 /* QuestionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionListViewController.swift; sourceTree = "<group>"; };
 		738331FF1B90BC6E0025F6D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		738332011B90BC6E0025F6D1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		738332041B90BC6E0025F6D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -48,6 +55,13 @@
 		73E596AF1B90C5DE00B9292F /* EnumerationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumerationExtensions.swift; sourceTree = "<group>"; };
 		73E596B11B90CB2500B9292F /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		73E596B31B90CB3400B9292F /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		73E596B51B90DEE800B9292F /* CardPopSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardPopSegue.swift; sourceTree = "<group>"; };
+		73E596B81B90E30D00B9292F /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		73E596BA1B90F33D00B9292F /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
+		73E596BB1B90F33D00B9292F /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
+		73E596BC1B90F33D00B9292F /* Vollkorn-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Vollkorn-Italic.ttf"; sourceTree = "<group>"; };
+		73E596BD1B90F33D00B9292F /* Vollkorn-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Vollkorn-Regular.ttf"; sourceTree = "<group>"; };
+		73E596C21B90F50000B9292F /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		82B6A472A0B09BEDF3CE3A46 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		90A93516549A210D0DFAB4B1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,13 +109,15 @@
 			isa = PBXGroup;
 			children = (
 				738331FA1B90BC6E0025F6D1 /* AppDelegate.swift */,
-				738331FC1B90BC6E0025F6D1 /* ViewController.swift */,
+				738331FC1B90BC6E0025F6D1 /* QuestionListViewController.swift */,
+				73E596B81B90E30D00B9292F /* QuestionViewController.swift */,
 				738331FE1B90BC6E0025F6D1 /* Main.storyboard */,
 				738332011B90BC6E0025F6D1 /* Images.xcassets */,
 				738332031B90BC6E0025F6D1 /* LaunchScreen.xib */,
-				738331F81B90BC6E0025F6D1 /* Supporting Files */,
+				73E596B71B90DEEB00B9292F /* Views & Segues */,
 				73E596AE1B90C5D400B9292F /* Extensions */,
 				7383321E1B90C1FC0025F6D1 /* Clients & Models */,
+				738331F81B90BC6E0025F6D1 /* Supporting Files */,
 			);
 			path = Avocat;
 			sourceTree = "<group>";
@@ -109,6 +125,11 @@
 		738331F81B90BC6E0025F6D1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				73E596C21B90F50000B9292F /* OpenSans-Regular.ttf */,
+				73E596BA1B90F33D00B9292F /* OpenSans-Italic.ttf */,
+				73E596BB1B90F33D00B9292F /* OpenSans-Semibold.ttf */,
+				73E596BC1B90F33D00B9292F /* Vollkorn-Italic.ttf */,
+				73E596BD1B90F33D00B9292F /* Vollkorn-Regular.ttf */,
 				738331F91B90BC6E0025F6D1 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -148,6 +169,14 @@
 				73E596AF1B90C5DE00B9292F /* EnumerationExtensions.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		73E596B71B90DEEB00B9292F /* Views & Segues */ = {
+			isa = PBXGroup;
+			children = (
+				73E596B51B90DEE800B9292F /* CardPopSegue.swift */,
+			);
+			name = "Views & Segues";
 			sourceTree = "<group>";
 		};
 		ABA6C49C1CA588B4371B2C30 /* Pods */ = {
@@ -252,8 +281,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				738332001B90BC6E0025F6D1 /* Main.storyboard in Resources */,
+				73E596BE1B90F33D00B9292F /* OpenSans-Italic.ttf in Resources */,
 				738332051B90BC6E0025F6D1 /* LaunchScreen.xib in Resources */,
+				73E596C01B90F33D00B9292F /* Vollkorn-Italic.ttf in Resources */,
+				73E596C11B90F33D00B9292F /* Vollkorn-Regular.ttf in Resources */,
 				738332021B90BC6E0025F6D1 /* Images.xcassets in Resources */,
+				73E596C31B90F50200B9292F /* OpenSans-Regular.ttf in Resources */,
+				73E596BF1B90F33D00B9292F /* OpenSans-Semibold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,8 +358,10 @@
 				73E596B01B90C5DE00B9292F /* EnumerationExtensions.swift in Sources */,
 				7383321B1B90BF920025F6D1 /* StringExtensions.swift in Sources */,
 				73E596B41B90CB3400B9292F /* Comment.swift in Sources */,
-				738331FD1B90BC6E0025F6D1 /* ViewController.swift in Sources */,
+				738331FD1B90BC6E0025F6D1 /* QuestionListViewController.swift in Sources */,
 				738331FB1B90BC6E0025F6D1 /* AppDelegate.swift in Sources */,
+				73E596B61B90DEE800B9292F /* CardPopSegue.swift in Sources */,
+				73E596B91B90E30D00B9292F /* QuestionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

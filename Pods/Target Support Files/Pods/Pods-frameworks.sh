@@ -57,6 +57,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods/AFOnoResponseSerializer.framework'
   install_framework 'Pods/Ono.framework'
   install_framework 'Pods/Parsimmon.framework'
+  install_framework 'Pods/pop.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods/ACBInfoPanel.framework'
@@ -64,4 +65,5 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods/AFOnoResponseSerializer.framework'
   install_framework 'Pods/Ono.framework'
   install_framework 'Pods/Parsimmon.framework'
+  install_framework 'Pods/pop.framework'
 fi

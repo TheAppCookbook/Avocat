@@ -26,12 +26,13 @@ PODS:
     - Ono (~> 1.0)
   - Ono (1.2.2)
   - Parsimmon (0.4.0)
+  - pop (1.0.7)
 
 DEPENDENCIES:
   - ACBInfoPanel (from `git@github.com:TheAppCookbook/templates.git`, branch `master`)
-  - AFNetworking
   - AFOnoResponseSerializer
   - Parsimmon (from `git@github.com:TheAppCookbook/Parsimmon.git`, branch `master`)
+  - pop
 
 EXTERNAL SOURCES:
   ACBInfoPanel:
@@ -55,5 +56,6 @@ SPEC CHECKSUMS:
   AFOnoResponseSerializer: c02c8bef1d6742ac68f33ecaed41826c9657bc33
   Ono: 80b1c686777d3f6d5d5ce6fcac8a74afef4ca197
   Parsimmon: 9fe1f416f5d0c63c28ba14bd4f1bbbfec458a7d3
+  pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
 
 COCOAPODS: 0.38.2

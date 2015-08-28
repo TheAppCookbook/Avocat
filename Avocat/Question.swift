@@ -13,6 +13,7 @@ struct Question {
     let url: NSURL
     let pageTitle: String
     
+    let titleText: String
     let questionId: String
     let explained: Bool
     let locked: Bool
@@ -24,7 +25,7 @@ struct Question {
     }
     
     // MARK: Initializers
-    init(url: NSURL, explained: Bool, locked: Bool) {
+    init(url: NSURL, titleText: String, explained: Bool, locked: Bool) {
         // Assume:
         // "r/explainlikeimfive/comments/QUESTION_ID/QUESTION_TITLE/"
         
@@ -39,5 +40,10 @@ struct Question {
         
         self.explained = explained
         self.locked = locked
+        
+        var cleanedTitleText = titleText.stringByReplacingOccurrencesOfString("ELI5:",
+            withString: "", options: nil, range: nil)
+        cleanedTitleText = cleanedTitleText.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        self.titleText = cleanedTitleText
     }
 }
