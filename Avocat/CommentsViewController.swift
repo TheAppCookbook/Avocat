@@ -65,4 +65,8 @@ class CommentsViewController: UIViewController {
         self.presentingViewController?.dismissViewControllerAnimated(true,
             completion: nil)
     }
+    
+    @IBAction func seeMoreGestureWasRecognized(sender: UIGestureRecognizer!) {
+        UIApplication.sharedApplication().openURL(self.activeComment!.url)
+    }
 }

@@ -25,7 +25,6 @@
 		73E596B01B90C5DE00B9292F /* EnumerationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E596AF1B90C5DE00B9292F /* EnumerationExtensions.swift */; };
 		73E596B21B90CB2500B9292F /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E596B11B90CB2500B9292F /* Question.swift */; };
 		73E596B41B90CB3400B9292F /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E596B31B90CB3400B9292F /* Comment.swift */; };
-		73E596B61B90DEE800B9292F /* CardPopSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E596B51B90DEE800B9292F /* CardPopSegue.swift */; };
 		73E596B91B90E30D00B9292F /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E596B81B90E30D00B9292F /* QuestionViewController.swift */; };
 		73E596BE1B90F33D00B9292F /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73E596BA1B90F33D00B9292F /* OpenSans-Italic.ttf */; };
 		73E596BF1B90F33D00B9292F /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73E596BB1B90F33D00B9292F /* OpenSans-Semibold.ttf */; };
@@ -67,7 +66,6 @@
 		73E596AF1B90C5DE00B9292F /* EnumerationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumerationExtensions.swift; sourceTree = "<group>"; };
 		73E596B11B90CB2500B9292F /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		73E596B31B90CB3400B9292F /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
-		73E596B51B90DEE800B9292F /* CardPopSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardPopSegue.swift; sourceTree = "<group>"; };
 		73E596B81B90E30D00B9292F /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		73E596BA1B90F33D00B9292F /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
 		73E596BB1B90F33D00B9292F /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
@@ -191,7 +189,6 @@
 			isa = PBXGroup;
 			children = (
 				73AF63F11B911179001DC75C /* SegmentedControl.swift */,
-				73E596B51B90DEE800B9292F /* CardPopSegue.swift */,
 				73D904551B90FFC1005E9C8C /* CardExpandSegue.swift */,
 			);
 			name = "Views & Segues";
@@ -382,7 +379,6 @@
 				73D904541B90FF19005E9C8C /* TapGestureRecognizer.swift in Sources */,
 				73AF63EE1B910713001DC75C /* CommentsViewController.swift in Sources */,
 				73AF63F21B911179001DC75C /* SegmentedControl.swift in Sources */,
-				73E596B61B90DEE800B9292F /* CardPopSegue.swift in Sources */,
 				73E596B91B90E30D00B9292F /* QuestionViewController.swift in Sources */,
 				73D904561B90FFC1005E9C8C /* CardExpandSegue.swift in Sources */,
 				73AF63F41B911644001DC75C /* ColorExtensions.swift in Sources */,

@@ -157,7 +157,9 @@ struct RedditClient {
                 let username = commentArea.firstChildWithCSS("a.author").stringValue()
                 
                 let userTextElement = commentArea.firstChildWithCSS("div.usertext-body")
-                let commentId = userTextElement.previousSibling.attributes["value"] as! String
+
+                var commentId = userTextElement.previousSibling.attributes["value"] as! String
+                commentId = commentId.componentsSeparatedByString("_").last!
                 
                 let elements: NSEnumerator = userTextElement.CSS("p") as! NSEnumerator
                 for element in elements {
@@ -180,6 +182,7 @@ struct RedditClient {
                 }
                 
                 let comment = Comment(
+                    question: question,
                     attributedText: commentText,
                     commentId: commentId,
                     authorUsername: username

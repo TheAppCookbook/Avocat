@@ -10,7 +10,12 @@ import Foundation
 
 struct Comment {
     // MARK: Properties
+    let question: Question
     let attributedText: NSAttributedString
     let commentId: String
     let authorUsername: String
+    
+    var url: NSURL {
+        return self.question.url.URLByAppendingPathComponent(self.commentId)
+    }
 }
