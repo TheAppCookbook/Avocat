@@ -29,11 +29,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Parsimmon.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,47 +47,42 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>02E4A236CCB39B88F858EE285CC3E6F2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>3DA374BB5346C86BB9E37D7D8A3F9705</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4D6B1B9BDB042F4202CC288ACD69C547</key>
+		<key>5737708B65905BE6BD5EF4DE5DC1BB77</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>68053BCDC913B8B5F097EBD6F5105970</key>
+		<key>57EE9F146F2541E754ED0D425760791C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6C1AC5F416FB0CBA721DEB222E05E1AE</key>
+		<key>AFA17EF151136F83810D3DA126E6410C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>83F2E14B9E7C00C13316FAA5FC3E36FB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9A9B0BE0FDCACA93E89CF42D44FBF16E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CC14D30113E5829E2FB44B4BD2DC1473</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CDF48C210071115F4074FC58173EC8CA</key>
+		<key>D41B7583C7B997CEA6C7A470E3B670BE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>DC80A6EAF9B8DD58C8029BDEDCF135A2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F33BA9971AB68E91CED87A5B0F7D98E1</key>
 		<dict>
 			<key>primary</key>
 			<true/>

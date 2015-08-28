@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "615276B986F9D67EDFE9F841"
+               BlueprintIdentifier = "4D9C3970C44FC498453454FF"
                BuildableName = "AFOnoResponseSerializer.framework"
                BlueprintName = "AFOnoResponseSerializer"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -26,7 +26,6 @@ PODS:
     - Ono (~> 1.0)
   - HMSegmentedControl (1.5.2)
   - Ono (1.2.2)
-  - Parsimmon (0.4.0)
   - pop (1.0.7)
   - UIScrollView-InfiniteScroll (0.7.3)
 
@@ -34,7 +33,6 @@ DEPENDENCIES:
   - ACBInfoPanel (from `git@github.com:TheAppCookbook/templates.git`, branch `master`)
   - AFOnoResponseSerializer
   - HMSegmentedControl
-  - Parsimmon (from `git@github.com:TheAppCookbook/Parsimmon.git`, branch `master`)
   - pop
   - UIScrollView-InfiniteScroll
 
@@ -42,17 +40,11 @@ EXTERNAL SOURCES:
   ACBInfoPanel:
     :branch: master
     :git: git@github.com:TheAppCookbook/templates.git
-  Parsimmon:
-    :branch: master
-    :git: git@github.com:TheAppCookbook/Parsimmon.git
 
 CHECKOUT OPTIONS:
   ACBInfoPanel:
     :commit: c418d6be0b4ffda3c851e47191e2d6402f66fb0e
     :git: git@github.com:TheAppCookbook/templates.git
-  Parsimmon:
-    :commit: 574125964d0cb249d45409e50467329f7dfe7746
-    :git: git@github.com:TheAppCookbook/Parsimmon.git
 
 SPEC CHECKSUMS:
   ACBInfoPanel: 186db7784366d9a331d406e02a9da58b61e1b55e
@@ -60,7 +52,6 @@ SPEC CHECKSUMS:
   AFOnoResponseSerializer: c02c8bef1d6742ac68f33ecaed41826c9657bc33
   HMSegmentedControl: 83b9686022d2176fb6457d2bdb61e5d6393fed7d
   Ono: 80b1c686777d3f6d5d5ce6fcac8a74afef4ca197
-  Parsimmon: 9fe1f416f5d0c63c28ba14bd4f1bbbfec458a7d3
   pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
   UIScrollView-InfiniteScroll: b6c7d6d155dca7f9c5dd43813ecffeb301b3d50c
 

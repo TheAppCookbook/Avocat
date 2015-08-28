@@ -19,18 +19,14 @@ import HMSegmentedControl
     @IBInspectable var fontSize: CGFloat = 15.0
     @IBInspectable var fontFamily: String = ""
     
-    override var sectionImages: [AnyObject]! {
-        didSet {
-            super.sectionImages = (self.sectionImages as! [UIImage]).map {
-                $0.imageScaledToHeight(self.frame.height * 0.66)
+    var templateImages: [UIImage]? {
+        willSet {
+            self.sectionImages = newValue!.map {
+                $0.imageScaledToHeight(self.frame.height * 0.66).imageWithColor(self.tintColor)
             }
-        }
-    }
-    
-    override var sectionSelectedImages: [AnyObject]! {
-        didSet {
-            super.sectionSelectedImages = (self.sectionSelectedImages as! [UIImage]).map {
-                $0.imageScaledToHeight(self.frame.height * 0.66)
+            
+            self.sectionSelectedImages = newValue!.map {
+                $0.imageScaledToHeight(self.frame.height * 0.66).imageWithColor(self.selectionIndicatorColor)
             }
         }
     }
@@ -50,7 +46,7 @@ import HMSegmentedControl
         self.selectedTitleTextAttributes = [
             NSForegroundColorAttributeName: self.selectionIndicatorColor
         ]
-        
+
         self.selectionIndicatorHeight = self.rawSelectionIndicatorHeight
     }
 }

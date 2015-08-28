@@ -33,11 +33,11 @@ class CommentsViewController: UIViewController {
         super.viewDidLoad()
         
         self.commentToggle.type = HMSegmentedControlTypeImages
-        self.commentToggle.sectionImages = [
+        self.commentToggle.templateImages = [
             UIImage(named: "best")!,
             UIImage(named: "controversial")!,
         ]
-                
+        
         self.commentToggle.selectedSegmentIndex = self.initialToggleIndex
         self.toggleValueDidChange(self.commentToggle)
     }

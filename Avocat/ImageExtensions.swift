@@ -25,4 +25,24 @@ extension UIImage {
         
         return self.imageWithSize(newSize)
     }
+    
+    func imageWithColor(color: UIColor) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(self.size, false, 0.0)
+        
+        color.setFill()
+        CGContextTranslateCTM(UIGraphicsGetCurrentContext(),
+            0, self.size.height)
+        CGContextScaleCTM(UIGraphicsGetCurrentContext(),
+            1.0, -1.0)
+        
+        let frame = CGRect(origin: CGPoint.zeroPoint, size: self.size)
+        CGContextClipToMask(UIGraphicsGetCurrentContext(),
+            frame, self.CGImage)
+        CGContextFillRect(UIGraphicsGetCurrentContext(), frame)
+        
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        
+        UIGraphicsEndImageContext()
+        return newImage
+    }
 }
