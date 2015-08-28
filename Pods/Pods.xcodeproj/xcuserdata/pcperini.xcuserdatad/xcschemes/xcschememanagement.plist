@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>HMSegmentedControl.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Ono.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -34,6 +39,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>UIScrollView-InfiniteScroll.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>pop.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,37 +52,47 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2394090DC1DB7B7B0193271587782139</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>3DA374BB5346C86BB9E37D7D8A3F9705</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4435A6358DA59A316439256BB1B43DC8</key>
+		<key>4D6B1B9BDB042F4202CC288ACD69C547</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CE2221FDDB1B13FEF5F1D3095150C3FA</key>
+		<key>68053BCDC913B8B5F097EBD6F5105970</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CE67F803E2FDBCAB72014C05ED9B8B31</key>
+		<key>6C1AC5F416FB0CBA721DEB222E05E1AE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DBEFFBD274A6E03AC1ACE955069480AC</key>
+		<key>83F2E14B9E7C00C13316FAA5FC3E36FB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FFD71C97A46610BDA29C8E7134AB5568</key>
+		<key>9A9B0BE0FDCACA93E89CF42D44FBF16E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CC14D30113E5829E2FB44B4BD2DC1473</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CDF48C210071115F4074FC58173EC8CA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DC80A6EAF9B8DD58C8029BDEDCF135A2</key>
 		<dict>
 			<key>primary</key>
 			<true/>

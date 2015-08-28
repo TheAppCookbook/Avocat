@@ -16,6 +16,7 @@ struct RedditClient {
     private static let baseURL: NSURL = NSURL(string: "https://www.reddit.com")!
     private enum paths: String {
         case questions = "r/explainlikeimfive/"
+        case search = "r/explainlikeimfive/search"
     }
     
     // MARK: Properties
@@ -26,10 +27,50 @@ struct RedditClient {
     }()
     
     // MARK: Accessors
+    func search(query: String, completion: ([Question]?) -> Void) {
+        let params = [
+            "q": query,
+            "restrict_sr": "on",
+            "sort": "relevance",
+            "t": "all"
+        ]
+        
+        self.client.GET(RedditClient.paths.search.rawValue, parameters: params, success: { (op: AFHTTPRequestOperation, resp: AnyObject) in
+            if let responseDoc = resp as? ONOXMLDocument {
+                var questions: [Question] = []
+                
+                if let results = responseDoc.firstChildWithCSS("div.search-result") {
+                    let elements: NSEnumerator = results.CSS("a.search-title") as! NSEnumerator
+                    for element in elements {
+                        if let questionElement = element as? ONOXMLElement {
+                            let titleText = questionElement.stringValue()
+                            if !titleText.hasPrefix("ELI5") {
+                                continue
+                            }
+                            
+                            let url = RedditClient.baseURL.URLByAppendingPathComponent(questionElement.attributes["href"] as! String)
+                            
+                            questions.append(Question(url: url,
+                                titleText: titleText,
+                                explained: false,
+                                locked: false))
+                        }
+                    }
+                }
+                
+                completion(questions)
+            } else {
+                completion(nil)
+            }
+        }, failure: { (op: AFHTTPRequestOperation, err: NSError) in
+            completion(nil)
+        })
+    }
+    
     func questions(lastQuestion: Question? = nil, completion: ([Question]?) -> Void) {
-        var params: NSMutableDictionary = ["count": 25]
+        var params: NSMutableDictionary = ["count": 5]
         if let lastQuestionId = lastQuestion?.questionId {
-            params["after"] = lastQuestionId
+            params["after"] = "t3_\(lastQuestionId)"
         }
         
         self.client.GET(RedditClient.paths.questions.rawValue, parameters: params, success: { (op: AFHTTPRequestOperation, resp: AnyObject) in
@@ -39,6 +80,11 @@ struct RedditClient {
                 let elements: NSEnumerator = responseDoc.CSS("a.title") as! NSEnumerator
                 for element in elements {
                     if let questionElement = element as? ONOXMLElement {
+                        let titleText = questionElement.stringValue()
+                        if !titleText.hasPrefix("ELI5") {
+                            continue
+                        }
+                        
                         var explained: Bool = false
                         var locked: Bool = false
                         
@@ -49,9 +95,8 @@ struct RedditClient {
                             }
                         }
                         
-                        let titleText = questionElement.stringValue()
-                        let url = RedditClient.baseURL.URLByAppendingPathComponent(questionElement.attributes["href"] as! String)
                         
+                        let url = RedditClient.baseURL.URLByAppendingPathComponent(questionElement.attributes["href"] as! String)
                         questions.append(Question(url: url,
                             titleText: titleText,
                             explained: explained,

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B9AF7C5892A03814390DF0A1"
+               BlueprintIdentifier = "F1CA63AF1CBFE41FC5C9D616"
                BuildableName = "Parsimmon.framework"
                BlueprintName = "Parsimmon"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -15,19 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-        
-//        let tagger = Tagger()
-//        let tags = tagger.tagWordsInText("ELI5: My friend in US says they buy big bottles of milk and use it over weeks. I'm from India and we buy milk in pouches. It gets stale in 2-3 days. How does milk in US stays fresh for weeks?")
-//        
-//        let nouns = tags.filter { $0.tag == "Noun" }
-//        let properNouns = nouns.filter { $0.token.isCapitalized && $0.token != "ELI5" }
-//        let commonNouns = nouns.filter { !$0.token.isCapitalized }
-//        
-//        let query = properNouns.map({ $0.token }) + commonNouns.map({ $0.token })
-//        println(" ".join(query))
-        
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {        
         return true
     }
 
