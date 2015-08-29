@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>AE1947C1-59AC-46B3-8D69-F464517C327F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Avocat</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>6411948DC56163A5DC84F61560F069570FD9EF95</key>
+		<string>github.com:TheAppCookbook/Avocat.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Avocat.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>6411948DC56163A5DC84F61560F069570FD9EF95</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:TheAppCookbook/Avocat.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>6411948DC56163A5DC84F61560F069570FD9EF95</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6411948DC56163A5DC84F61560F069570FD9EF95</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Avocat</string>
+		</dict>
+	</array>
+</dict>
+</plist>
