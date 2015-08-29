@@ -486,6 +486,7 @@
                         <outlet property="authorNameLabel" destination="4aZ-xX-0i6" id="KOX-DN-K4K"/>
                         <outlet property="commentToggle" destination="Jpl-lu-hI4" id="HF1-Mb-fBl"/>
                         <outlet property="textLabel" destination="olp-qg-jgQ" id="us3-WM-yZ4"/>
+                        <outlet property="textScrollView" destination="FFu-UB-U4r" id="Gyj-ju-A6J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lVN-Yc-Iak" userLabel="First Responder" sceneMemberID="firstResponder"/>

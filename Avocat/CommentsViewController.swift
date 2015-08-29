@@ -14,6 +14,7 @@ class CommentsViewController: UIViewController {
     @IBOutlet var textLabel: UILabel!
     @IBOutlet var authorNameLabel: UILabel!
     @IBOutlet var commentToggle: SegmentedControl!
+    @IBOutlet var textScrollView: UIScrollView!
     
     var comments: (best: Comment, controversial: Comment)?
     var initialToggleIndex: Int = 0
@@ -59,6 +60,9 @@ class CommentsViewController: UIViewController {
         default:
             break
         }
+        
+        self.textScrollView.setContentOffset(CGPoint.zeroPoint,
+            animated: true)
     }
     
     @IBAction func dismissGestureWasRecognized(sender: UIGestureRecognizer!) {
