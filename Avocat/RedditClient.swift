@@ -152,43 +152,55 @@ struct RedditClient {
         self.client.GET(question.urlPath, parameters: params, success: { (op: AFHTTPRequestOperation, resp: AnyObject) in
             if let responseDoc = resp as? ONOXMLDocument {
                 var commentText = NSMutableAttributedString()
+                var comment: Comment?
                 
+                // Get comment elements
                 let commentArea = responseDoc.firstChildWithCSS("div.commentarea")
                 let username = commentArea.firstChildWithCSS("a.author").stringValue()
                 
-                let userTextElement = commentArea.firstChildWithCSS("div.usertext-body")
-
-                var commentId = userTextElement.previousSibling.attributes["value"] as! String
-                commentId = commentId.componentsSeparatedByString("_").last!
+                let userTextElements = commentArea.CSS("div.usertext-body") as! NSEnumerator
                 
-                let elements: NSEnumerator = userTextElement.CSS("p") as! NSEnumerator
-                for element in elements {
-                    if let paragraphElement = element as? ONOXMLElement {
-                        let paragraphData = paragraphElement.description.dataUsingEncoding(NSUTF8StringEncoding,
-                            allowLossyConversion: true)!
+                for textElement in userTextElements {
+                    if let userTextElement = textElement as? ONOXMLElement {
+                        var commentId = userTextElement.previousSibling.attributes["value"] as! String
+                        commentId = commentId.componentsSeparatedByString("_").last!
                         
-                        var paragraphText: NSMutableAttributedString = NSMutableAttributedString(data: paragraphData,
-                            options: [
-                                NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
-                                NSCharacterEncodingDocumentAttribute: NSUTF8StringEncoding,
-                            ], documentAttributes: nil, error: nil)!
-                        
-                        paragraphText.setAttributes([
-                            NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleNone.rawValue
-                        ], range: NSMakeRange(0, paragraphText.length))
-                        
-                        commentText.appendAttributedString(paragraphText)
+                        if let elements: NSEnumerator = userTextElement.CSS("p") as? NSEnumerator {
+                            for element in elements {
+                                if let paragraphElement = element as? ONOXMLElement {
+                                    let paragraphData = paragraphElement.description.dataUsingEncoding(NSUTF8StringEncoding,
+                                        allowLossyConversion: true)!
+                                    
+                                    var paragraphText: NSMutableAttributedString = NSMutableAttributedString(data: paragraphData,
+                                        options: [
+                                            NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
+                                            NSCharacterEncodingDocumentAttribute: NSUTF8StringEncoding,
+                                        ], documentAttributes: nil, error: nil)!
+                                    
+                                    paragraphText.setAttributes([
+                                        NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleNone.rawValue
+                                    ], range: NSMakeRange(0, paragraphText.length))
+                                    
+                                    commentText.appendAttributedString(paragraphText)
+                                }
+                            }
+                                                    
+                            if commentText.string.hasPrefix("[deleted]") {
+                                continue
+                            }
+                            
+                            comment = Comment(
+                                question: question,
+                                attributedText: commentText,
+                                commentId: commentId,
+                                authorUsername: username
+                            )
+                            
+                            handler(comment!)
+                            return
+                        }
                     }
                 }
-                
-                let comment = Comment(
-                    question: question,
-                    attributedText: commentText,
-                    commentId: commentId,
-                    authorUsername: username
-                )
-                
-                handler(comment)
             }
         }, failure: nil)
     }
