@@ -50,6 +50,9 @@ class CommentsViewController: UIViewController {
     
     // MARK: Responders
     @IBAction func toggleValueDidChange(sender: SegmentedControl!) {
+        self.textScrollView.setContentOffset(CGPoint.zeroPoint,
+            animated: false)
+        
         switch sender.selectedSegmentIndex {
         case 0:
             self.activeComment = self.comments!.best
@@ -60,9 +63,6 @@ class CommentsViewController: UIViewController {
         default:
             break
         }
-        
-        self.textScrollView.setContentOffset(CGPoint.zeroPoint,
-            animated: true)
     }
     
     @IBAction func dismissGestureWasRecognized(sender: UIGestureRecognizer!) {
