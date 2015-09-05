@@ -102,7 +102,7 @@ class QuestionListViewController: UIViewController {
         switch segue.identifier {
         case .Some("PushDetail"):
             let indexPath = sender as! NSIndexPath
-            let question = self.questions[indexPath.row]
+            let question = self.questionForIndexPath(indexPath)
             
             let questionVC = segue.destinationViewController as! QuestionViewController
             questionVC.question = question
@@ -124,6 +124,16 @@ class QuestionListViewController: UIViewController {
             
             self.tableView.reloadData()
             completion()
+        }
+    }
+    
+    func questionForIndexPath(indexPath: NSIndexPath) -> Question {
+        switch self.filterToggle.selectedSegmentIndex {
+        case 1:
+            return self.answeredQuestions[indexPath.row]
+            
+        default:
+            return self.questions[indexPath.row]
         }
     }
     
@@ -232,14 +242,7 @@ extension QuestionListViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let question: Question
-        switch self.filterToggle.selectedSegmentIndex {
-        case 1:
-            question = self.answeredQuestions[indexPath.row]
-            
-        default:
-            question = self.questions[indexPath.row]
-        }
+        let question = self.questionForIndexPath(indexPath)
         
         let cell = tableView.dequeueReusableCellWithIdentifier("QuestionCell") as UITableViewCell!
         cell.backgroundColor = self.backgroundColors[indexPath.row % self.backgroundColors.count]
