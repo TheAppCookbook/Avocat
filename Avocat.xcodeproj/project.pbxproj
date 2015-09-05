@@ -22,7 +22,6 @@
 		73AF63F61B911AD4001DC75C /* ImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AF63F51B911AD4001DC75C /* ImageExtensions.swift */; };
 		73D904541B90FF19005E9C8C /* TapGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D904531B90FF19005E9C8C /* TapGestureRecognizer.swift */; };
 		73D904561B90FFC1005E9C8C /* CardExpandSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D904551B90FFC1005E9C8C /* CardExpandSegue.swift */; };
-		73E596B01B90C5DE00B9292F /* EnumerationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E596AF1B90C5DE00B9292F /* EnumerationExtensions.swift */; };
 		73E596B21B90CB2500B9292F /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E596B11B90CB2500B9292F /* Question.swift */; };
 		73E596B41B90CB3400B9292F /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E596B31B90CB3400B9292F /* Comment.swift */; };
 		73E596B91B90E30D00B9292F /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E596B81B90E30D00B9292F /* QuestionViewController.swift */; };
@@ -63,7 +62,6 @@
 		73AF63F51B911AD4001DC75C /* ImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageExtensions.swift; sourceTree = "<group>"; };
 		73D904531B90FF19005E9C8C /* TapGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapGestureRecognizer.swift; sourceTree = "<group>"; };
 		73D904551B90FFC1005E9C8C /* CardExpandSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardExpandSegue.swift; sourceTree = "<group>"; };
-		73E596AF1B90C5DE00B9292F /* EnumerationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumerationExtensions.swift; sourceTree = "<group>"; };
 		73E596B11B90CB2500B9292F /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		73E596B31B90CB3400B9292F /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		73E596B81B90E30D00B9292F /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
@@ -177,7 +175,6 @@
 			isa = PBXGroup;
 			children = (
 				7383321A1B90BF920025F6D1 /* StringExtensions.swift */,
-				73E596AF1B90C5DE00B9292F /* EnumerationExtensions.swift */,
 				73D904531B90FF19005E9C8C /* TapGestureRecognizer.swift */,
 				73AF63F31B911644001DC75C /* ColorExtensions.swift */,
 				73AF63F51B911AD4001DC75C /* ImageExtensions.swift */,
@@ -259,7 +256,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = AppCookbook;
 				TargetAttributes = {
 					738331F41B90BC6E0025F6D1 = {
@@ -371,7 +368,6 @@
 				73AF63F61B911AD4001DC75C /* ImageExtensions.swift in Sources */,
 				7383321D1B90C1F10025F6D1 /* RedditClient.swift in Sources */,
 				73E596B21B90CB2500B9292F /* Question.swift in Sources */,
-				73E596B01B90C5DE00B9292F /* EnumerationExtensions.swift in Sources */,
 				7383321B1B90BF920025F6D1 /* StringExtensions.swift in Sources */,
 				73E596B41B90CB3400B9292F /* Comment.swift in Sources */,
 				738331FD1B90BC6E0025F6D1 /* QuestionListViewController.swift in Sources */,
@@ -444,6 +440,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -511,6 +508,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Avocat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "the.appcookbook.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -522,6 +520,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Avocat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "the.appcookbook.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -540,6 +539,7 @@
 				);
 				INFOPLIST_FILE = AvocatTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "the.appcookbook.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Avocat.app/Avocat";
 			};
@@ -555,6 +555,7 @@
 				);
 				INFOPLIST_FILE = AvocatTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "the.appcookbook.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Avocat.app/Avocat";
 			};

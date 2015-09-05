@@ -10,7 +10,6 @@ import Foundation
 
 extension String {
     var isCapitalized: Bool {
-        var range = "A"..."Z"
-        return range.contains(String(self[self.startIndex]))
+        return ("A"..."Z").contains(String(self[self.startIndex]))
     }
 }

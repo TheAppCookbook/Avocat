@@ -19,7 +19,7 @@ struct Question {
     let locked: Bool
     
     var urlPath: String {
-        var components = self.url.pathComponents as! [String]
+        var components = self.url.pathComponents as [String]!
         components.removeAtIndex(0) // leading "/"
         return "/".join(components)
     }
@@ -31,8 +31,8 @@ struct Question {
         
         var urlComponents = url.pathComponents!
         
-        let title = urlComponents.removeLast() as! String
-        let questionId = urlComponents.removeLast() as! String
+        let title = urlComponents.removeLast() as String!
+        let questionId = urlComponents.removeLast() as String!
         
         self.url = url
         self.pageTitle = title
@@ -42,7 +42,7 @@ struct Question {
         self.locked = locked
         
         var cleanedTitleText = titleText.stringByReplacingOccurrencesOfString("ELI5:",
-            withString: "", options: nil, range: nil)
+            withString: "")
         cleanedTitleText = cleanedTitleText.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
         self.titleText = cleanedTitleText
     }

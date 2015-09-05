@@ -92,7 +92,7 @@ class QuestionListViewController: UIViewController {
         super.viewDidAppear(animated)
         
         self.setNeedsStatusBarAppearanceUpdate()
-        if let selectedIndexPath = self.tableView.indexPathForSelectedRow() {
+        if let selectedIndexPath = self.tableView.indexPathForSelectedRow {
             self.tableView.deselectRowAtIndexPath(selectedIndexPath,
                 animated: true)
         }
@@ -198,7 +198,7 @@ class QuestionListViewController: UIViewController {
     
     func refreshControlDidTrigger(sender: UIRefreshControl!) {
         if self.searchBarIsShowing {
-            self.search(self.searchBar.text) {
+            self.search(self.searchBar.text!) {
                 sender.endRefreshing()
             }
         } else {
@@ -209,7 +209,7 @@ class QuestionListViewController: UIViewController {
     }
     
     @IBAction func searchFieldDidExit(sender: UITextField!) {
-        self.search(sender.text)
+        self.search(sender.text!)
     }
 }
 
@@ -241,7 +241,7 @@ extension QuestionListViewController: UITableViewDataSource {
             question = self.questions[indexPath.row]
         }
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("QuestionCell") as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("QuestionCell") as UITableViewCell!
         cell.backgroundColor = self.backgroundColors[indexPath.row % self.backgroundColors.count]
         
         let titleLabel = cell.viewWithTag(1) as! UILabel

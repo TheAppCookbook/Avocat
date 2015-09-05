@@ -67,8 +67,8 @@ struct RedditClient {
         })
     }
     
-    func questions(lastQuestion: Question? = nil, completion: ([Question]?) -> Void) {
-        var params: NSMutableDictionary = ["count": 5]
+    func questions(lastQuestion lastQuestion: Question? = nil, completion: ([Question]?) -> Void) {
+        let params: NSMutableDictionary = ["count": 5]
         if let lastQuestionId = lastQuestion?.questionId {
             params["after"] = "t3_\(lastQuestionId)"
         }
@@ -151,7 +151,7 @@ struct RedditClient {
     private func comment(question: Question, params: NSDictionary, handler: (Comment) -> Void) {
         self.client.GET(question.urlPath, parameters: params, success: { (op: AFHTTPRequestOperation, resp: AnyObject) in
             if let responseDoc = resp as? ONOXMLDocument {
-                var commentText = NSMutableAttributedString()
+                let commentText = NSMutableAttributedString()
                 var comment: Comment?
                 
                 // Get comment elements
@@ -171,11 +171,11 @@ struct RedditClient {
                                     let paragraphData = paragraphElement.description.dataUsingEncoding(NSUTF8StringEncoding,
                                         allowLossyConversion: true)!
                                     
-                                    var paragraphText: NSMutableAttributedString = NSMutableAttributedString(data: paragraphData,
+                                    let paragraphText: NSMutableAttributedString = try! NSMutableAttributedString(data: paragraphData,
                                         options: [
                                             NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
                                             NSCharacterEncodingDocumentAttribute: NSUTF8StringEncoding,
-                                        ], documentAttributes: nil, error: nil)!
+                                        ], documentAttributes: nil)
                                     
                                     paragraphText.setAttributes([
                                         NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleNone.rawValue

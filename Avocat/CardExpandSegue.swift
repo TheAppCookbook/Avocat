@@ -15,8 +15,8 @@ protocol CardExpansionSourceViewController {
 
 @objc(CardExpandSegue) class CardExpandSegue: UIStoryboardSegue {
     override func perform() {
-        let sourceVC = self.sourceViewController as! UIViewController
-        let destinationVC = self.destinationViewController as! UIViewController
+        let sourceVC = self.sourceViewController
+        let destinationVC = self.destinationViewController
         
         if let expansionView = (self.sourceViewController as? CardExpansionSourceViewController)?.expansionView {
             
