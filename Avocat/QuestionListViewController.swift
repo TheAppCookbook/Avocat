@@ -118,10 +118,7 @@ class QuestionListViewController: UIViewController {
     // MARK: Data Handlers
     func reloadData(completion: (() -> Void) = {}) {
         self.redditClient.questions { (questions: [Question]?) in
-            if questions != nil {
-                self.questions = questions!
-            }
-            
+            self.questions = questions ?? []
             self.tableView.reloadData()
             completion()
         }
