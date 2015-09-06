@@ -21,7 +21,7 @@ struct Question {
     var urlPath: String {
         var components = self.url.pathComponents as [String]!
         components.removeAtIndex(0) // leading "/"
-        return "/".join(components)
+        return components.joinWithSeparator("/")
     }
     
     // MARK: Initializers

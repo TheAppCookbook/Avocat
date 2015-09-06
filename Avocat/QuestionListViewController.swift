@@ -136,7 +136,7 @@ class QuestionListViewController: UIViewController {
     
     func appendNextPage() {
         self.redditClient.questions(lastQuestion: self.questions.last!) { (questions: [Question]?) in
-            self.questions.extend(questions!)
+            self.questions.appendContentsOf(questions!)
             self.tableView.reloadData()
         }
     }

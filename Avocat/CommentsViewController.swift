@@ -50,7 +50,7 @@ class CommentsViewController: UIViewController {
     
     // MARK: Responders
     @IBAction func toggleValueDidChange(sender: SegmentedControl!) {
-        self.textScrollView.setContentOffset(CGPoint.zeroPoint,
+        self.textScrollView.setContentOffset(CGPoint.zero,
             animated: false)
         
         switch sender.selectedSegmentIndex {

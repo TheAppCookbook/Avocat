@@ -12,7 +12,7 @@ extension UIImage {
     func imageWithSize(size: CGSize) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
         
-        self.drawInRect(CGRect(origin: CGPoint.zeroPoint, size: size))
+        self.drawInRect(CGRect(origin: CGPoint.zero, size: size))
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         
         UIGraphicsEndImageContext()
@@ -35,7 +35,7 @@ extension UIImage {
         CGContextScaleCTM(UIGraphicsGetCurrentContext(),
             1.0, -1.0)
         
-        let frame = CGRect(origin: CGPoint.zeroPoint, size: self.size)
+        let frame = CGRect(origin: CGPoint.zero, size: self.size)
         CGContextClipToMask(UIGraphicsGetCurrentContext(),
             frame, self.CGImage)
         CGContextFillRect(UIGraphicsGetCurrentContext(), frame)
