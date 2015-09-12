@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -391,56 +391,58 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="FFu-UB-U4r">
-                                <rect key="frame" x="16" y="28" width="568" height="479"/>
+                                <rect key="frame" x="16" y="48" width="568" height="459"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olp-qg-jgQ">
-                                        <rect key="frame" x="25" y="20" width="518" height="28"/>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olp-qg-jgQ">
+                                        <rect key="frame" x="25" y="0.0" width="518" height="28"/>
                                         <fontDescription key="fontDescription" name="Vollkorn-Regular" family="Vollkorn" pointSize="20"/>
                                         <color key="textColor" red="0.33333333329999998" green="0.36078431370000003" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Jim" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4aZ-xX-0i6">
-                                        <rect key="frame" x="267" y="73" width="35.5" height="25"/>
+                                        <rect key="frame" x="267" y="53" width="35.5" height="25"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Italic" family="Open Sans" pointSize="18"/>
                                         <color key="textColor" red="0.61176470589999998" green="0.61176470589999998" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="See more on Reddit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSB-uC-1vy">
-                                        <rect key="frame" x="197" y="133" width="151.5" height="25"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Efg-qf-b2A">
+                                        <rect key="frame" x="356" y="119" width="16" height="16"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="151.5" id="YfA-qw-89T"/>
-                                            <constraint firstAttribute="height" constant="25" id="oBb-pF-HUt"/>
+                                            <constraint firstAttribute="width" constant="16" id="HLC-Cx-Mzn"/>
+                                            <constraint firstAttribute="height" constant="16" id="JLT-n4-zHv"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="arrow"/>
+                                        <connections>
+                                            <action selector="seeMoreButtonWasPressed:" destination="YEC-fY-yMz" eventType="touchUpInside" id="cvy-Xe-L6f"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xcn-Sn-KsM">
+                                        <rect key="frame" x="196" y="114" width="151.5" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="151.5" id="35l-Nu-q5R"/>
+                                            <constraint firstAttribute="height" constant="25" id="jge-DU-W2L"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
-                                        <color key="textColor" red="0.61176470589999998" green="0.61176470589999998" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
+                                        <state key="normal" title="See more on Reddit">
+                                            <color key="titleColor" red="0.61176470589999998" green="0.61176470589999998" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
-                                            <outletCollection property="gestureRecognizers" destination="RH4-Hv-h4Y" appends="YES" id="6Il-fz-nsc"/>
+                                            <action selector="seeMoreButtonWasPressed:" destination="YEC-fY-yMz" eventType="touchUpInside" id="gPH-0I-a3c"/>
                                         </connections>
-                                    </label>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="IYE-hP-UWO">
-                                        <rect key="frame" x="356" y="138" width="16" height="16"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="16" id="aSI-JT-wFL"/>
-                                            <constraint firstAttribute="width" constant="16" id="ggQ-A2-3yU"/>
-                                        </constraints>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="RH4-Hv-h4Y" appends="YES" id="bDC-9Z-gKO"/>
-                                        </connections>
-                                    </imageView>
+                                    </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="xcn-Sn-KsM" secondAttribute="bottom" constant="25" id="Bzb-2a-cbs"/>
                                     <constraint firstItem="4aZ-xX-0i6" firstAttribute="top" secondItem="olp-qg-jgQ" secondAttribute="bottom" constant="25" id="FOK-eD-dbn"/>
-                                    <constraint firstItem="kSB-uC-1vy" firstAttribute="centerY" secondItem="IYE-hP-UWO" secondAttribute="centerY" constant="-0.5" id="Hca-pH-GXb"/>
+                                    <constraint firstItem="Efg-qf-b2A" firstAttribute="leading" secondItem="xcn-Sn-KsM" secondAttribute="trailing" constant="8.5" id="MFU-II-dCK"/>
                                     <constraint firstItem="olp-qg-jgQ" firstAttribute="leading" secondItem="FFu-UB-U4r" secondAttribute="leading" constant="25" id="NLY-fq-99f"/>
-                                    <constraint firstItem="kSB-uC-1vy" firstAttribute="top" secondItem="4aZ-xX-0i6" secondAttribute="bottom" constant="35" id="PDb-uI-TCL"/>
-                                    <constraint firstItem="olp-qg-jgQ" firstAttribute="top" secondItem="FFu-UB-U4r" secondAttribute="top" constant="20" id="U2Q-dg-agH"/>
-                                    <constraint firstItem="IYE-hP-UWO" firstAttribute="leading" secondItem="kSB-uC-1vy" secondAttribute="trailing" constant="7.5" id="Xar-gN-VYH"/>
+                                    <constraint firstItem="olp-qg-jgQ" firstAttribute="top" secondItem="FFu-UB-U4r" secondAttribute="top" id="U2Q-dg-agH"/>
                                     <constraint firstItem="olp-qg-jgQ" firstAttribute="width" secondItem="FFu-UB-U4r" secondAttribute="width" constant="-50" id="ZyA-1S-eRK"/>
+                                    <constraint firstItem="xcn-Sn-KsM" firstAttribute="centerX" secondItem="4aZ-xX-0i6" secondAttribute="centerX" constant="-13" id="dIA-4O-Htp"/>
                                     <constraint firstItem="4aZ-xX-0i6" firstAttribute="centerX" secondItem="olp-qg-jgQ" secondAttribute="centerX" id="deN-k2-9sk"/>
+                                    <constraint firstItem="Efg-qf-b2A" firstAttribute="centerY" secondItem="xcn-Sn-KsM" secondAttribute="centerY" id="fUm-vw-4Le"/>
                                     <constraint firstAttribute="trailing" secondItem="olp-qg-jgQ" secondAttribute="trailing" constant="25" id="qbH-Z0-aTt"/>
-                                    <constraint firstAttribute="bottom" secondItem="kSB-uC-1vy" secondAttribute="bottom" constant="25" id="vKt-8v-XBI"/>
-                                    <constraint firstItem="kSB-uC-1vy" firstAttribute="centerX" secondItem="4aZ-xX-0i6" secondAttribute="centerX" constant="-12" id="yAc-eX-RXc"/>
+                                    <constraint firstItem="xcn-Sn-KsM" firstAttribute="top" secondItem="4aZ-xX-0i6" secondAttribute="bottom" constant="36" id="ufX-Lf-evk"/>
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="BaB-IX-niq" appends="YES" id="15A-CQ-3wK"/>
@@ -481,7 +483,7 @@
                             <constraint firstItem="FFu-UB-U4r" firstAttribute="leading" secondItem="2q4-Bt-xFR" secondAttribute="leadingMargin" constant="-4" id="Oin-7H-7tY"/>
                             <constraint firstItem="46t-69-ugn" firstAttribute="top" secondItem="Jpl-lu-hI4" secondAttribute="bottom" constant="20" id="fuY-r4-fjF"/>
                             <constraint firstAttribute="centerX" secondItem="Jpl-lu-hI4" secondAttribute="centerX" id="sRI-gl-4An"/>
-                            <constraint firstItem="FFu-UB-U4r" firstAttribute="top" secondItem="NHK-Tg-EFO" secondAttribute="bottom" constant="8" id="vid-e4-Gy2"/>
+                            <constraint firstItem="FFu-UB-U4r" firstAttribute="top" secondItem="NHK-Tg-EFO" secondAttribute="bottom" constant="28" id="vid-e4-Gy2"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="l8J-gf-FbE" appends="YES" id="nK9-vn-9IT"/>
@@ -500,7 +502,7 @@
                         <action selector="dismissGestureWasRecognized:" destination="YEC-fY-yMz" id="UPk-RE-Bp6"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <tapGestureRecognizer delaysTouchesBegan="YES" delaysTouchesEnded="NO" id="BaB-IX-niq">
+                <tapGestureRecognizer id="BaB-IX-niq">
                     <connections>
                         <action selector="dismissGestureWasRecognized:" destination="YEC-fY-yMz" id="a2Y-8d-oML"/>
                     </connections>

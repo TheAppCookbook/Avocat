@@ -8,6 +8,7 @@
 
 import UIKit
 import HMSegmentedControl
+import SafariServices
 
 class CommentsViewController: UIViewController {
     // MARK: Properties
@@ -70,7 +71,12 @@ class CommentsViewController: UIViewController {
             completion: nil)
     }
     
-    @IBAction func seeMoreGestureWasRecognized(sender: UIGestureRecognizer!) {
-        UIApplication.sharedApplication().openURL(self.activeComment!.url)
+    @IBAction func seeMoreButtonWasPressed(sender: UIButton!) {
+        let safariVC = SFSafariViewController(URL: self.activeComment!.url)
+        safariVC.view.tintColor = self.view.tintColor
+        
+        self.presentViewController(safariVC,
+            animated: true,
+            completion: nil)
     }
 }

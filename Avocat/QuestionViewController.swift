@@ -55,6 +55,7 @@ class QuestionViewController: UIViewController {
             let destinationVC = segue.destinationViewController as! CommentsViewController
             destinationVC.comments = self.comments
             destinationVC.initialToggleIndex = sender as! Int
+            destinationVC.view.tintColor = self.questionBackgroundColor
             
         default:
             break
