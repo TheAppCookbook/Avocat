@@ -393,12 +393,6 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="FFu-UB-U4r">
                                 <rect key="frame" x="16" y="48" width="568" height="459"/>
                                 <subviews>
-                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olp-qg-jgQ">
-                                        <rect key="frame" x="25" y="0.0" width="518" height="28"/>
-                                        <fontDescription key="fontDescription" name="Vollkorn-Regular" family="Vollkorn" pointSize="20"/>
-                                        <color key="textColor" red="0.33333333329999998" green="0.36078431370000003" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Jim" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4aZ-xX-0i6">
                                         <rect key="frame" x="267" y="53" width="35.5" height="25"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Italic" family="Open Sans" pointSize="18"/>
@@ -430,19 +424,25 @@
                                             <action selector="seeMoreButtonWasPressed:" destination="YEC-fY-yMz" eventType="touchUpInside" id="gPH-0I-a3c"/>
                                         </connections>
                                     </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Lorem ipsum" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="giU-sC-Wcf">
+                                        <rect key="frame" x="25" y="0.0" width="518" height="44.5"/>
+                                        <color key="textColor" red="0.33333333329999998" green="0.36078431370000003" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Vollkorn-Regular" family="Vollkorn" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="xcn-Sn-KsM" secondAttribute="bottom" constant="25" id="Bzb-2a-cbs"/>
-                                    <constraint firstItem="4aZ-xX-0i6" firstAttribute="top" secondItem="olp-qg-jgQ" secondAttribute="bottom" constant="25" id="FOK-eD-dbn"/>
+                                    <constraint firstItem="4aZ-xX-0i6" firstAttribute="top" secondItem="giU-sC-Wcf" secondAttribute="bottom" constant="8.5" id="Fwu-Cc-uHC"/>
+                                    <constraint firstAttribute="trailing" secondItem="giU-sC-Wcf" secondAttribute="trailing" constant="25" id="HZJ-gd-lJC"/>
                                     <constraint firstItem="Efg-qf-b2A" firstAttribute="leading" secondItem="xcn-Sn-KsM" secondAttribute="trailing" constant="8.5" id="MFU-II-dCK"/>
-                                    <constraint firstItem="olp-qg-jgQ" firstAttribute="leading" secondItem="FFu-UB-U4r" secondAttribute="leading" constant="25" id="NLY-fq-99f"/>
-                                    <constraint firstItem="olp-qg-jgQ" firstAttribute="top" secondItem="FFu-UB-U4r" secondAttribute="top" id="U2Q-dg-agH"/>
-                                    <constraint firstItem="olp-qg-jgQ" firstAttribute="width" secondItem="FFu-UB-U4r" secondAttribute="width" constant="-50" id="ZyA-1S-eRK"/>
                                     <constraint firstItem="xcn-Sn-KsM" firstAttribute="centerX" secondItem="4aZ-xX-0i6" secondAttribute="centerX" constant="-13" id="dIA-4O-Htp"/>
-                                    <constraint firstItem="4aZ-xX-0i6" firstAttribute="centerX" secondItem="olp-qg-jgQ" secondAttribute="centerX" id="deN-k2-9sk"/>
                                     <constraint firstItem="Efg-qf-b2A" firstAttribute="centerY" secondItem="xcn-Sn-KsM" secondAttribute="centerY" id="fUm-vw-4Le"/>
-                                    <constraint firstAttribute="trailing" secondItem="olp-qg-jgQ" secondAttribute="trailing" constant="25" id="qbH-Z0-aTt"/>
+                                    <constraint firstItem="giU-sC-Wcf" firstAttribute="top" secondItem="FFu-UB-U4r" secondAttribute="top" id="fgc-mJ-xlQ"/>
+                                    <constraint firstItem="giU-sC-Wcf" firstAttribute="leading" secondItem="FFu-UB-U4r" secondAttribute="leading" constant="25" id="jSQ-pg-txu"/>
+                                    <constraint firstItem="4aZ-xX-0i6" firstAttribute="centerX" secondItem="giU-sC-Wcf" secondAttribute="centerX" id="ox0-Lf-Xpp"/>
                                     <constraint firstItem="xcn-Sn-KsM" firstAttribute="top" secondItem="4aZ-xX-0i6" secondAttribute="bottom" constant="36" id="ufX-Lf-evk"/>
+                                    <constraint firstItem="giU-sC-Wcf" firstAttribute="width" secondItem="FFu-UB-U4r" secondAttribute="width" constant="-50" id="yo5-gQ-ALx"/>
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="BaB-IX-niq" appends="YES" id="15A-CQ-3wK"/>
@@ -492,8 +492,8 @@
                     <connections>
                         <outlet property="authorNameLabel" destination="4aZ-xX-0i6" id="KOX-DN-K4K"/>
                         <outlet property="commentToggle" destination="Jpl-lu-hI4" id="HF1-Mb-fBl"/>
-                        <outlet property="textLabel" destination="olp-qg-jgQ" id="us3-WM-yZ4"/>
                         <outlet property="textScrollView" destination="FFu-UB-U4r" id="Gyj-ju-A6J"/>
+                        <outlet property="textView" destination="giU-sC-Wcf" id="dGq-jA-eBc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lVN-Yc-Iak" userLabel="First Responder" sceneMemberID="firstResponder"/>

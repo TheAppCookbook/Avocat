@@ -12,7 +12,7 @@ import SafariServices
 
 class CommentsViewController: UIViewController {
     // MARK: Properties
-    @IBOutlet var textLabel: UILabel!
+    @IBOutlet var textView: UITextView!
     @IBOutlet var authorNameLabel: UILabel!
     @IBOutlet var commentToggle: SegmentedControl!
     @IBOutlet var textScrollView: UIScrollView!
@@ -21,7 +21,18 @@ class CommentsViewController: UIViewController {
     var initialToggleIndex: Int = 0
     private var activeComment: Comment? {
         didSet {
-            self.textLabel.attributedText = self.activeComment!.attributedText
+            // Update appearance
+            let attributedText = self.activeComment!.attributedText.mutableCopy() as! NSMutableAttributedString
+            
+            attributedText.addAttribute(NSFontAttributeName,
+                value: self.textView.font!,
+                range: NSMakeRange(0, attributedText.length))
+            
+            attributedText.addAttribute(NSForegroundColorAttributeName,
+                value: self.textView.textColor!,
+                range: NSMakeRange(0, attributedText.length))
+            
+            self.textView.attributedText = attributedText
             self.authorNameLabel.text = "- \(self.activeComment!.authorUsername)"
         }
     }
