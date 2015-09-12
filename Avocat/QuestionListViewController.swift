@@ -248,6 +248,10 @@ extension QuestionListViewController: UITableViewDataSource {
         titleLabel.text = question.titleText
         titleLabel.textColor = self.textColors[cell.backgroundColor!]
         
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = cell.backgroundColor! - UIColor(hexString: "#333333")
+        cell.selectedBackgroundView = backgroundView
+        
         return cell
     }
 }

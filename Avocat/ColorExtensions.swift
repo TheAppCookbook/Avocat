@@ -23,4 +23,38 @@ extension UIColor {
             blue: CGFloat(rgbValue & 0xFF) / 255.0,
             alpha: 1.0)
     }
+    
+    private func combine(rhs: UIColor, op: (CGFloat, CGFloat) -> CGFloat) -> UIColor {
+        var lhsRed: CGFloat = 0.0
+        var lhsGreen: CGFloat = 0.0
+        var lhsBlue: CGFloat = 0.0
+        var lhsAlpha: CGFloat = 0.0
+        
+        self.getRed(&lhsRed,
+            green: &lhsGreen,
+            blue: &lhsBlue,
+            alpha: &lhsAlpha)
+        
+        var rhsRed: CGFloat = 0.0
+        var rhsGreen: CGFloat = 0.0
+        var rhsBlue: CGFloat = 0.0
+        
+        rhs.getRed(&rhsRed,
+            green: &rhsGreen,
+            blue: &rhsBlue,
+            alpha: nil)
+        
+        return UIColor(red: op(lhsRed, rhsRed),
+            green: op(lhsGreen, rhsGreen),
+            blue: op(lhsBlue, rhsBlue),
+            alpha: lhsAlpha)
+    }
+}
+
+func +(lhs: UIColor, rhs: UIColor) -> UIColor {
+    return lhs.combine(rhs, op: +)
+}
+
+func -(lhs: UIColor, rhs: UIColor) -> UIColor {
+    return lhs.combine(rhs, op: -)
 }
