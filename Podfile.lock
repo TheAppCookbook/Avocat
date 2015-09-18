@@ -26,7 +26,7 @@ PODS:
     - Ono (~> 1.0)
   - HMSegmentedControl (1.5.2)
   - Ono (1.2.2)
-  - pop (1.0.7)
+  - pop (1.0.8)
   - UIScrollView-InfiniteScroll (0.7.3)
 
 DEPENDENCIES:
@@ -43,7 +43,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   ACBInfoPanel:
-    :commit: c418d6be0b4ffda3c851e47191e2d6402f66fb0e
+    :commit: 610ab98843f5181c128509584cd173ad9779ca6a
     :git: git@github.com:TheAppCookbook/templates.git
 
 SPEC CHECKSUMS:
@@ -52,7 +52,7 @@ SPEC CHECKSUMS:
   AFOnoResponseSerializer: c02c8bef1d6742ac68f33ecaed41826c9657bc33
   HMSegmentedControl: 83b9686022d2176fb6457d2bdb61e5d6393fed7d
   Ono: 80b1c686777d3f6d5d5ce6fcac8a74afef4ca197
-  pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
+  pop: bb773ae2c791ca2629de13b347e7a8b450fa6a57
   UIScrollView-InfiniteScroll: b6c7d6d155dca7f9c5dd43813ecffeb301b3d50c
 
 COCOAPODS: 0.38.2

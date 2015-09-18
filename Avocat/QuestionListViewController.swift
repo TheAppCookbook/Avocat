@@ -25,7 +25,7 @@ class QuestionListViewController: UIViewController {
             if self.searchBarIsShowing != oldValue && !self.searchBarIsShowing {
                 self.reloadData()
             }
-            
+
             self.tableView.removeInfiniteScroll()
             if !self.searchBarIsShowing {
                 self.tableView.addInfiniteScrollWithHandler { (tableView: AnyObject!) in
